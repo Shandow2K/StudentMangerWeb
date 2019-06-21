@@ -47,6 +47,9 @@ public class CourseServlet extends HttpServlet {
 			deleteCourse(request,response);
 		}
 	}
+	/*
+	 * 删除课程
+	 */
 	private void deleteCourse(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -68,6 +71,9 @@ public class CourseServlet extends HttpServlet {
 			}
 		}
 	}
+	/*
+	 * 编辑课程信息
+	 */
 	private void editCourse(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -98,6 +104,9 @@ public class CourseServlet extends HttpServlet {
 			courseDao.closeCon();
 		}
 	}
+	/*
+	 * 获取课程列表
+	 */
 	private void getCourseList(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -128,6 +137,10 @@ public class CourseServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * 
+	 * 添加课程信息
+	 */
 	private void addCourse(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub

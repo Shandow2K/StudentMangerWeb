@@ -1,14 +1,12 @@
 package com.ischoolbar.programmer.model;
-/**
- * 考勤表
- * @author llq
- *
+/*
+ * 待签到课程实体表
  */
-public class Attendance {
+public class CurrentAttend {
 	private int id;
 	private int courseId;
-	private int studentId;
-	private String type;
+	private String validation;
+	private String limit_date;
 	private String date;
 	private String state;
 	public int getId() {
@@ -23,17 +21,17 @@ public class Attendance {
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
-	public int getStudentId() {
-		return studentId;
+	public String getValidation() {
+		return validation;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setValidation(String validation) {
+		this.validation = validation;
 	}
-	public String getType() {
-		return type;
+	public String getLimit_date() {
+		return limit_date;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setLimit_date(String limit_date) {
+		this.limit_date = limit_date;
 	}
 	public String getDate() {
 		return date;

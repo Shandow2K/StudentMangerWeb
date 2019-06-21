@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>校园信息交互系统</title>
+    <title>基于Web的校园信息交互系统</title>
     <link rel="shortcut icon" href="favicon.ico"/>
 	<link rel="bookmark" href="favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="easyui/css/default.css" />
@@ -80,14 +80,14 @@
 <body class="easyui-layout" style="overflow-y: hidden"  scroll="no">
 	<noscript>
 		<div style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
-		    <img src="images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+		    <img src="images/noscript.gif" alt='抱歉，请开启JavaScript脚本支持！' />
 		</div>
 	</noscript>
     <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;
         background: url(images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
         <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${user.name}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="LoginServlet?method=logout" id="loginOut">安全退出</a></span>
-        <span style="padding-left:10px; font-size: 16px; ">校园信息交互系统</span>
+        <span style="padding-left:10px; font-size: 16px; ">基于Web的校园信息交互系统</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
         <div class="footer">中国地质大学(北京)</div>

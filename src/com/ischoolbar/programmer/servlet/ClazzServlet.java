@@ -40,6 +40,9 @@ public class ClazzServlet extends HttpServlet {
 			editClazz(request, response);
 		}
 	}
+	/*
+	 * 编辑班级信息
+	 */
 	private void editClazz(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -62,6 +65,9 @@ public class ClazzServlet extends HttpServlet {
 			}
 		}
 	}
+	/*
+	 * 删除班级
+	 */
 	private void deleteClazz(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -78,6 +84,10 @@ public class ClazzServlet extends HttpServlet {
 			}
 		}
 	}
+	/*
+	 * 
+	 * 添加班级信息
+	 */
 	private void addClazz(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -99,6 +109,9 @@ public class ClazzServlet extends HttpServlet {
 		}
 		
 	}
+	/*
+	 * 班级列表
+	 */
 	private void clazzList(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -112,6 +125,9 @@ public class ClazzServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * 获取班级列表
+	 */
 	private void getClazzList(HttpServletRequest request,HttpServletResponse response){
 		String name = request.getParameter("clazzName");
 		Integer currentPage = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));

@@ -54,6 +54,9 @@ public class LeaveServlet extends HttpServlet {
 			deleteLeave(request,response);
 		}
 	}
+	/*
+	 * 删除请假信息
+	 */
 	private void deleteLeave(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -70,6 +73,9 @@ public class LeaveServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * 审核请假信息
+	 */
 	private void checkLeave(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -98,6 +104,9 @@ public class LeaveServlet extends HttpServlet {
 			leaveDao.closeCon();
 		}
 	}
+	/*
+	 * 编辑请假信息
+	 */
 	private void editLeave(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -124,6 +133,10 @@ public class LeaveServlet extends HttpServlet {
 			leaveDao.closeCon();
 		}
 	}
+	/*
+	 * 
+	 * 获取请假列表
+	 */
 	private void getLeaveList(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
@@ -159,6 +172,9 @@ public class LeaveServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * 请假操作
+	 */
 	private void addLeave(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub

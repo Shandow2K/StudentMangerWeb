@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -59,8 +60,9 @@
  						}
  					}		
  		       	},
- 		       {field:'type',title:'签到类型',width:200, sortable: false},
- 		      {field:'date',title:'签到日期',width:200, sortable: false}
+ 		       {field:'type',title:'签到课程时间',width:200, sortable: false},
+ 		      {field:'date',title:'签到日期',width:200, sortable: false},
+ 		      {field:'state',title:'测试',width:200, sortable: false}
 	 		]], 
 	        toolbar: "#toolbar",
 	        onBeforeLoad : function(){
@@ -184,15 +186,24 @@
 								data: $("#addForm").serialize(),
 								success: function(msg){
 									if(msg == "success"){
-										$.messager.alert("消息提醒","选课信息添加成功!","info");
+										$.messager.alert("消息提醒","签到信息添加成功!","info");
 										//关闭窗口
 										$("#addDialog").dialog("close");
 										//清空原表格数据
 										$("#add_name").textbox('setValue', "");
+										$("#validation").textbox('setValue', "");
+										
 										//刷新
 										$('#dataList').datagrid("reload");
 									} else{
 										$.messager.alert("消息提醒",msg,"warning");
+										//关闭窗口
+										$("#addDialog").dialog("close");
+										//清空原表格数据
+										$("#add_name").textbox('setValue', "");
+										$("#validation").textbox('setValue', "");
+										//刷新
+										$('#dataList').datagrid("reload");
 										return;
 									} 
 								}
@@ -213,7 +224,7 @@
 	  	
 	  //下拉框通用属性
 	  	$("#add_studentList, #add_courseList,#studentList,#courseList,#add_typeList").combobox({
-	  		width: "200",
+	  		width: "150",
 	  		height: "30",
 	  		valueField: "id",
 	  		textField: "name",
@@ -246,7 +257,7 @@
 		  		}
 		  	});
 	  	}
-	  	var typeData = [{id:"上午",text:"上午"},{id:"下午",text:"下午"}];
+	  	var typeData = [{id:"周二8:00-10:00",text:"上午"},{id:"周三14:00-15:45",text:"下午"}];
 	  	$("#add_typeList").combobox({
 	  		data:typeData,
 	  		valueField: 'id',
@@ -262,7 +273,7 @@
 	  		data:typeData,
 	  		valueField: 'id',
 	  		textField: 'text',
-	  		width: "80",
+	  		width: "100",
 	  		height: "25",
 	  		onLoadSuccess: function(){
 				//默认选择第一条数据
@@ -286,6 +297,7 @@
 	    	$('#dataList').datagrid("reload",{});
 	    	$("#studentList").combobox('clear');
 	    	$("#courseList").combobox('clear');
+	    	
 	    });
 	    
 	    
@@ -337,27 +349,45 @@
 	<div id="addDialog" style="padding: 10px">  
     	<form id="addForm" method="post">
 	    	<table cellpadding="8" >
+<%-- 	    	<c:if test="${userType == 2}"> --%>
 	    		<tr>
-	    			<td style="width:40px">学生:</td>
+	    			<td style="width:60px">学生:</td>
 	    			<td colspan="3">
-	    				<input id="add_studentList" style="width: 200px; height: 30px;" class="easyui-textbox" name="studentid" data-options="required:true, missingMessage:'请选择学生'" />
+	    				<input id="add_studentList" style="width: 150px; height: 30px;" class="easyui-textbox" name="studentid" data-options="required:true, missingMessage:'请选择学生'" />
 	    			</td>
-	    			<td style="width:80px"></td>
+	    			<td style="width:130px"> ${limitDate} </td>
+	    		</tr>
+<%-- 	    		</c:if> --%>
+	    		<tr>
+	    			<td style="width:60px">课程:</td>
+	    			<td colspan="3">
+	    				<input id="add_courseList" style="width: 150px; height: 30px;" class="easyui-textbox" name="courseid" data-options="required:true, missingMessage:'请选择课程'" />
+	    			</td>
+	    			<td style="width:130px"></td>
 	    		</tr>
 	    		<tr>
-	    			<td style="width:40px">课程:</td>
+	    			<td style="width:60px">类型:</td>
 	    			<td colspan="3">
-	    				<input id="add_courseList" style="width: 200px; height: 30px;" class="easyui-textbox" name="courseid" data-options="required:true, missingMessage:'请选择课程'" />
+	    				<input id="add_typeList" style="width: 150px; height: 30px;" class="easyui-textbox" name="type" data-options="required:true, missingMessage:'请选择类型'" />
 	    			</td>
-	    			<td style="width:80px"></td>
+	    			<td style="width:130px"></td>
 	    		</tr>
 	    		<tr>
-	    			<td style="width:40px">类型:</td>
+	    			<td style="width:60px">验证码:</td>
 	    			<td colspan="3">
-	    				<input id="add_typeList" style="width: 200px; height: 30px;" class="easyui-textbox" name="type" data-options="required:true, missingMessage:'请选择类型'" />
+	    				<input id="validation" style="width: 150px; height: 30px;" class="easyui-textbox" name="validation" data-options="required:true, missingMessage:'请填写'" />
 	    			</td>
-	    			<td style="width:80px"></td>
+	    			<td style="width:130px"></td>
 	    		</tr>
+	    		<c:if test="${userType == 3}">
+	    		<tr>
+	    			<td style="width:60px">限制时间:</td>
+	    			<td colspan="3">
+	    				<input id="limit_date" style="width: 150px; height: 30px;" class="easyui-textbox" name="limit_date" data-options="required:true, missingMessage:'请设置限制时间'" />
+	    			</td>
+	    			<td style="width:130px"></td>
+	    		</tr>
+	    		</c:if>
 	    	</table>
 	    </form>
 	</div>

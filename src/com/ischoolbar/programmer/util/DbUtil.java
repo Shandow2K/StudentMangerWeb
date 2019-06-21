@@ -5,9 +5,11 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.management.loading.PrivateClassLoader;
 
+import com.ischoolbar.programmer.dao.CurrentAttendDAO;
 import com.ischoolbar.programmer.dao.NoticeDao;
 import com.ischoolbar.programmer.model.Notice;
 /**
@@ -18,8 +20,8 @@ import com.ischoolbar.programmer.model.Notice;
 public class DbUtil {
 
 	private String dbUrl = "jdbc:mysql://localhost:3306/student_manager?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true";
-	private String dbUser = "root";
-	private String dbPassword = "141774";
+	private String dbUser = "sa";
+	private String dbPassword = "123456";
 	private String jdbcName = "com.mysql.jdbc.Driver";
 	private Connection connection = null;
 	public Connection getConnection(){
@@ -53,7 +55,10 @@ public class DbUtil {
 		NoticeDao noticeDao=new NoticeDao();
 		ArrayList<Notice> notices=null;
 		notices=noticeDao.findNotice();
+		CurrentAttendDAO currentAttendDAO=new CurrentAttendDAO();
 		System.out.println(notices.get(0).getTitle());
+		System.out.println(DateFormatUtil.addDate(new Date(), 0, "yyyy-MM-dd HH"));
+		System.out.println(currentAttendDAO.getCurrentAttend(2,DateFormatUtil.getFormatDate(new Date(), "yyyy-MM-dd")));
 	}
 
 }
