@@ -31,6 +31,9 @@ public class CpachaServlet extends HttpServlet {
 		}
 		reponse.getWriter().write("error method");
 	}
+	/*
+	 * 产生登陆验证码
+	 */
 	private void generateLoginCpacha(HttpServletRequest request,HttpServletResponse reponse) throws IOException{
 		CpachaUtil cpachaUtil = new CpachaUtil();
 		String generatorVCode = cpachaUtil.generatorVCode();

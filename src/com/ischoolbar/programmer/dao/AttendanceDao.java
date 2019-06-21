@@ -22,7 +22,9 @@ public class AttendanceDao extends BaseDao {
 	 * @return
 	 */
 	public boolean addAttendance(Attendance attendance){
-		String sql = "insert into s_attendance values(null,"+attendance.getCourseId()+","+attendance.getStudentId()+",'"+attendance.getType()+"','"+attendance.getDate()+"')";
+		//≤‚ ‘state
+		String sql = "insert into s_attendance values(null,"+attendance.getCourseId()+","+attendance.getStudentId()+",'"+attendance.getType()+"','"+attendance.getDate()+"','"+attendance.getState()+"')";
+		System.out.println("hello");
 		return update(sql);
 	}
 	
@@ -69,6 +71,10 @@ public class AttendanceDao extends BaseDao {
 		if(!StringUtil.isEmpty(attendace.getDate())){
 			sql += " and date = '" + attendace.getDate() + "'";
 		}
+		//≤‚ ‘state
+//		if(!StringUtil.isEmpty(attendace.getState())){
+//			sql += " and state = '" + attendace.getState() + "'";
+//		}
 		sql += " limit " + page.getStart() + "," + page.getPageSize();
 		sql = sql.replaceFirst("and", "where");
 		ResultSet resultSet = query(sql);
@@ -80,6 +86,8 @@ public class AttendanceDao extends BaseDao {
 				a.setStudentId(resultSet.getInt("student_id"));
 				a.setType(resultSet.getString("type"));
 				a.setDate(resultSet.getString("date"));
+				//≤‚ ‘state
+				a.setState(resultSet.getString("state"));
 				ret.add(a);
 			}
 		} catch (SQLException e) {

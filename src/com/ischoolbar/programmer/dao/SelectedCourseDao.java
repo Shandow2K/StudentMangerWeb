@@ -1,4 +1,4 @@
-package com.ischoolbar.programmer.dao;
+ package com.ischoolbar.programmer.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import com.ischoolbar.programmer.model.SelectedCourse;
 /**
  * 
  * @author llq
- *选课表数据库操作封装
+ *选课表数据库操作
  */
 public class SelectedCourseDao extends BaseDao {
 	public List<SelectedCourse> getSelectedCourseList(SelectedCourse selectedCourse,Page page){

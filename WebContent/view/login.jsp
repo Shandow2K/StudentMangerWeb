@@ -65,13 +65,13 @@
 		});
 	})
 </script> 
-<title>登录|校园信息交互系统</title>
-<meta name="keywords" content="校园信息交互系统">
+<title>登录|基于Web的校园信息交互系统</title>
+<meta name="keywords" content="基于Web的校园信息交互系统">
 </head>
 <body>
 
 <div class="header" style="padding: 0;">
-	<h2 style="color: white; width: 400px; height: 60px; line-height: 60px; margin: 0 0 0 30px; padding: 0;">校园信息交互系统</h2>
+	<h2 style="color: white; width: 400px; height: 60px; line-height: 60px; margin: 0 0 0 30px; padding: 0;">基于Web的校园信息交互系统</h2>
 </div>
 <div class="loginWraper">
   <div id="loginform" class="loginBox">
