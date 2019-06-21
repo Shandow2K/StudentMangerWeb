@@ -10,6 +10,7 @@ public class DateFormatUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		return sdf.format(date);
 	}
+	//返回date类型
 	public static Date getFormatdate(String date,String format) {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         Date currentDate=null;
@@ -21,6 +22,7 @@ public class DateFormatUtil {
 		}
         return currentDate;
 	}
+	//根据限定时间计算出截止时间
 	public static String addDate(Date date,int limit,String format) {
 		Calendar nowTime=Calendar.getInstance();
 		nowTime.add(Calendar.MINUTE, limit);
@@ -29,6 +31,7 @@ public class DateFormatUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		return sdf.format(currentDate);
 	}
+	//根据两个时间的前后，判定是否当前日期合法
 	public static boolean isvalid(String nowtime,String limittime) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date nowDate=null;

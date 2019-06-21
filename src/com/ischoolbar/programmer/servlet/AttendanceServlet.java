@@ -40,14 +40,6 @@ public class AttendanceServlet extends HttpServlet{
 		if(request.getSession().getAttribute("limitDate")==null) {
 			request.getSession().setAttribute("limitDate", " ");	
 		}
-//		CurrentAttendDAO currentAttendDAO=new CurrentAttendDAO();
-//		int courseId = request.getParameter("courseid") == null ? 0 : Integer.parseInt(request.getParameter("courseid").toString());
-//
-//		if(currentAttendDAO.isadded(courseId, DateFormatUtil.getFormatDate(new Date(), "yyyy-MM-dd"))){
-//		CurrentAttend testCurrentAttend=currentAttendDAO.getCurrentAttendList().get(0);
-//		//签到截止时间
-//		request.getSession().setAttribute("limitDate", "截止时间:"+testCurrentAttend.getLimit_date());
-//		}
 		if("toAttendanceServletListView".equals(method)){
 			try {
 				request.getRequestDispatcher("view/attendanceList.jsp").forward(request, response);
