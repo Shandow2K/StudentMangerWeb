@@ -57,7 +57,6 @@ public class DbUtil {
 		notices=noticeDao.findNotice();
 		CurrentAttendDAO currentAttendDAO=new CurrentAttendDAO();
 		System.out.println(notices.get(0).getTitle());
-		System.out.println(DateFormatUtil.addDate(new Date(), 0, "yyyy-MM-dd HH"));
 		System.out.println(currentAttendDAO.getCurrentAttend(2,DateFormatUtil.getFormatDate(new Date(), "yyyy-MM-dd")));
 	}
 

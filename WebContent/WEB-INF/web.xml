@@ -46,6 +46,7 @@
     <url-pattern>/AttendanceServlet</url-pattern>
     <url-pattern>/LeaveServlet</url-pattern>
     <url-pattern>/ScoreServlet</url-pattern>
+	<url-pattern>/notice</url-pattern>
   </filter-mapping>
   <servlet>
     <description>登录后的主界面</description>
@@ -129,12 +130,21 @@
     <url-pattern>/LeaveServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description>请假信息管理</description>
+    <description>成绩信息管理</description>
     <servlet-name>ScoreServlet</servlet-name>
     <servlet-class>com.ischoolbar.programmer.servlet.ScoreServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ScoreServlet</servlet-name>
     <url-pattern>/ScoreServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+   <description>通知管理</description>
+    <servlet-name>NoticeServlet</servlet-name>
+    <servlet-class>com.ischoolbar.programmer.servlet.NoticeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeServlet</servlet-name>
+    <url-pattern>/notice</url-pattern>
   </servlet-mapping>
 </web-app>
