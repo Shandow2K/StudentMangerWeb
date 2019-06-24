@@ -62,7 +62,7 @@
  		       	},
  		       {field:'type',title:'签到课程时间',width:200, sortable: false},
  		      {field:'date',title:'签到日期',width:200, sortable: false},
- 		      {field:'state',title:'测试',width:200, sortable: false}
+ 		      {field:'state',title:'签到结果',width:200, sortable: false}
 	 		]], 
 	        toolbar: "#toolbar",
 	        onBeforeLoad : function(){
